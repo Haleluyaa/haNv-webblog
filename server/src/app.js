@@ -26,7 +26,7 @@ app.get('/users', function(req,res){
 
 //Create user
 app.post('/user/',function(req,res){
-    res.send('ทำการสร้างผู้ใช้งาน: ' +JSON.stringify(res.body))
+    res.send('ทำการสร้างผู้ใช้งาน: ' +JSON.stringify(req.body))
 })
 
 // edit user
