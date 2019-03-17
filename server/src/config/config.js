@@ -1,6 +1,6 @@
 module.exports = {
     db: {
-        database = process.env.DB_NAME || 'haNvWebblogDb',
+        database: process.env.DB_NAME || 'haNvWebblogDb',
         user: process.env.DB_User || 'root',
         password: process.env.DB_PASS || '',
         options: {
