@@ -8,6 +8,8 @@
             <p>email : {{user.email}}</p>
             <p>password : {{user.password}}</p>
             <p><button v-on:click="navigateTo('/user/'+user.id)">ดูข้อมูลผู้ใช้</button></p>
+            <p><button v-on:click="navigateTo('/user/edit/'+user.id)">แก้ไขข้อมูลผู้ใช้</button></p>
+            <p><button v-on:click="deleteUser(user)">ลบข้อมูล</button></p>
         </div>
     </div>
 </template>
@@ -23,13 +25,32 @@ export default {
         }
     },
     async created (){
-        /*let results = (await UsersService.index()).data
-        console.log(results)*/
+        try{
+            /*let results = (await UsersService.index()).data
+            console.log(results)*/
         this.users = (await UsersService.index()).data
+        }catch (error){
+            console.log(error)
+        }
+        
     },
     methods: {
         navigateTo (route) {
             this.$router.push(route)
+        },
+        async deleteUser (user) {
+            let result = confirm ("want to delete?")
+            if (result){
+                try {
+                    await UsersService.delete(user)
+                    this.refreshData()
+                } catch (err){
+                    console.log(err)
+                }
+            }
+        },
+        async refreshData () {
+            this.users = (await UsersService.index()).data
         }
     }
 }

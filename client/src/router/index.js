@@ -22,7 +22,7 @@ export default new Router({
       component: UserCreate
     },
     {
-      path: '/users/edit',
+      path: '/user/edit/:userId',
       name: 'users-edit',
       component: UserEdit
     },
