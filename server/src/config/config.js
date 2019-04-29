@@ -7,5 +7,8 @@ module.exports = {
             dialect: process.env.DIALECT || 'sqlite',
             storage: './haNvWebblog-db.sqlite'
         }
+    },
+    authentication: {
+        jwtSecret: 'Thanawit'
     }
 }
