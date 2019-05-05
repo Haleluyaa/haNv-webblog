@@ -9,6 +9,7 @@
     </div>
 </template>
 <script>
+
 import AuthenService from '@/services/AuthenService'
 export default {
     data () {
@@ -20,7 +21,7 @@ export default {
     methods:{
         async onLogin (){
             try {
-                const response = await AuthenService.loin({
+                const response = await AuthenService.login({
                     email: this.email,
                     password: this.password
                 })
@@ -32,3 +33,6 @@ export default {
     }
 }
 </script>
+<style scoped>
+
+</style>
