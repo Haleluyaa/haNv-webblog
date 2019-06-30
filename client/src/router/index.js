@@ -19,7 +19,7 @@ export default new Router({
       component: UserIndex
     },
     {
-      path: '/users/create',
+      path: '/user/create',
       name: 'users-create',
       component: UserCreate
     },

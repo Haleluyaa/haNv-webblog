@@ -5,7 +5,7 @@ module.exports = function (req, res, next) {
     console.log(res)*/
     passport.authenticate('user', 'jwt', function (err,user){
         //if (err|| !user) {}
-        if (err|| !user) {
+        if (err || !user) {
             res.status(403).send({
                 err: 'you do not have access to this resource'
             })
